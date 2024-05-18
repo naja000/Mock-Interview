@@ -1,0 +1,35 @@
+{% extends 'admin/indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_guide#abt">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i.fname}} {{ i.lname }}</td>
+
+      <td>&nbsp;{{i.address}}</td>
+      <td>&nbsp;{{i.phone}}</td>
+      <td>&nbsp;{{i.email}}</td>
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td><a href="{% url 'dltgd' id=i.LOGIN.id %}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td colspan="9"><div align="center">
+        <label>
+        <input type="submit" name="Submit" value="ADD NEW" />
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

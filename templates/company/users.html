@@ -1,0 +1,19 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="478" border="1" id="customers" class="table">
+    <tr>
+      <th width="49" scope="col">NAME</th>
+      <th width="53" scope="col"></th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.fname}} {{ i.lname }}</td>
+        <td> <a href="">CHAT</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'admin/indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'mnguser2' %}">
+  <table width="478" border="1" id="customers" class="table">
+      <tr align="right"><td colspan="9"><input type="text" name="t1" REQUIRED>&nbsp;&nbsp;<input type="submit" value="SEARCH"> </td></tr>
+    <tr>
+      <th width="49" scope="col">NAME</th>
+      <th width="68" scope="col">GENDER</th>
+      <th width="51" scope="col">PLACE</th>
+      <th width="40" scope="col">POST</th>
+      <th width="27" scope="col">PIN</th>
+      <th width="55" scope="col">PHONE</th>
+      <th width="53" scope="col">EMAIL</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.fname}} {{ i.lname }}</td>
+      <td>&nbsp;{{i.gender}}</td>
+      <td>&nbsp;{{i.place}}</td>
+      <td>&nbsp;{{i.post}}</td>
+      <td>&nbsp;{{i.pin}}</td>
+      <td>&nbsp;{{i.phone}}</td>
+      <td>&nbsp;{{i.email}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'guide/indexgd.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_test2">
+  <table width="397" border="1" id="customers" class="table">
+    <tr>
+      <th width="178" scope="row">EXAM</th>
+      <td width="203"><label>
+        <input type="text" name="textfield" pattern="[A-Z a-z.]{2,}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">VACCANCY</th>
+      <td><input type="text" name="textfield2"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">DATE</th>
+      <td><input type="date" name="textfield3" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'guide/indexgd.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'drply2' %}">
+  <table width="549" border="1" id="customers" class="table">
+    <tr>
+      <th width="539" scope="row"><p>SEND REPLY          </p>
+        <label>
+        <textarea name="textarea" style="width:400PX;height:80px;" required></textarea>
+        <br />
+        <br />
+        <input type="submit" name="Submit" value="SEND" class="btn btn-info" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

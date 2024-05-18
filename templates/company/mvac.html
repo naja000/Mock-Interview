@@ -1,0 +1,39 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addvac#abt">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">JOB</th>
+      <th scope="col">VACCANCY</th>
+      <th scope="col">QUALIFICATION</th>
+      <th scope="col">EXPERIENCE</th>
+              <th scope="col">SALARY</th>
+      <th scope="col"> DETAILS</th>
+
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.job}}</td>
+      <td>&nbsp;{{i.vacncy}}</td>
+      <td>&nbsp;{{i.qualif}}</td>
+      <td>&nbsp;{{i.exp}}</td>
+              <td>&nbsp;{{i.salary}}</td>
+      <td>&nbsp;{{i.det}}</td>
+
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td><a href="{% url 'dltvac' id=i.id %}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td colspan="9"><div align="center">
+        <label>
+        <input type="submit" name="Submit" value="ADD NEW" />
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

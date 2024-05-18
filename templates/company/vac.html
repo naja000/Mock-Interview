@@ -1,0 +1,42 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="vac#abt">
+  <table width="397" border="1" id="customers" class="table">
+
+    <tr>
+      <th width="178" scope="row">JOB</th>
+      <td width="203"><label>
+        <input type="text" name="textfield" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">VACCANCY </th>
+      <td><input type="text" name="textfield2"  required/></td>
+    </tr>
+
+    <tr>
+      <th scope="row">QUALIFICATION</th>
+      <td><input type="text" name="textfield3" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">EXPERIENCE</th>
+      <td><input type="text" name="textfield4"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">SALARY</th>
+      <td><input type="text" name="textfield5" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">DETAILS </th>
+      <td><input type="text" name="textfield6" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

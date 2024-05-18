@@ -1,0 +1,24 @@
+{% extends 'admin/indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="900" border="1" id="customers" class="table">
+    <tr>
+      <th width="42" scope="col">USER</th>
+      <th width="97" scope="col">COMPLAINT</th>
+      <th width="43" scope="col">DATE</th>
+      <th width="103" scope="col">&nbsp;REPLY</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.USER.fname}}&nbsp;{{ i.USER.lname }}</td>
+      <td>&nbsp;{{i.comp}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>{% if i.reply == 'pending' %}<a href="{% url 'rply' id=i.id %}#abt" class="btn btn-info">SEND REPLY</a>{% else %}
+      {{i.reply}} {% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

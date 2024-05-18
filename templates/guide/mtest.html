@@ -1,0 +1,32 @@
+{% extends 'guide/indexgd.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_test#abt">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">EXAM</th>
+      <th scope="col">VACCANCY</th>
+      <th scope="col">DATE</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i.exam}} </td>
+      <td>&nbsp;{{i.vaccancy}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td><a href="{% url 'dltst' id=i.id %}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td colspan="9"><div align="center">
+        <label>
+        <input type="submit" name="Submit" value="ADD NEW" />
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'guide/indexgd.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addqstn#abt">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">QUSETION</th>
+      <th scope="col">OPTION 1</th>
+      <th scope="col">OPTION 2</th>
+      <th scope="col">OPTION 3</th>
+              <th scope="col">OPTION 4</th>
+      <th scope="col">ANSWER </th>
+
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.question}}</td>
+      <td>&nbsp;{{i.op1}}</td>
+      <td>&nbsp;{{i.op2}}</td>
+      <td>&nbsp;{{i.op3}}</td>
+              <td>&nbsp;{{i.op4}}</td>
+      <td>&nbsp;{{i.ans}}</td>
+
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td><a href="{% url 'dltqst' id=i.id %}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td colspan="9"><div align="center">
+        <label>
+        <input type="submit" name="Submit" value="ADD NEW" />
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

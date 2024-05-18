@@ -1,0 +1,51 @@
+{% extends 'guide/indexgd.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_qtn1">
+  <table width="397" border="1" id="customers" class="table">
+        <tr>
+      <th width="178" scope="row">TEST TYPE</th>
+      <td width="203"><label>
+        <select name="slt" required>
+{% for i in v %}
+            <option value="{{ i.id }}">{{ i.exam }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th width="178" scope="row">QUSETION</th>
+      <td width="203"><label>
+        <input type="text" name="textfield" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">OPTION 1</th>
+      <td><input type="text" name="textfield2"  required/></td>
+    </tr>
+
+    <tr>
+      <th scope="row">OPTION 2</th>
+      <td><input type="text" name="textfield3" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">OPTION 3</th>
+      <td><input type="text" name="textfield4"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">OPTION 4</th>
+      <td><input type="text" name="textfield5" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">ANSWER </th>
+      <td><input type="text" name="textfield6" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

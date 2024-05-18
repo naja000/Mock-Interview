@@ -1,0 +1,21 @@
+{% extends 'admin/indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="900" border="1" id="customers" class="table">
+    <tr>
+      <th width="42" scope="col">USER</th>
+      <th width="97" scope="col">REVIEWS</th>
+      <th width="43" scope="col">DATE</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.USER.fname}}&nbsp;{{ i.USER.lname }}</td>
+      <td>&nbsp;{{i.review}}</td>
+      <td>&nbsp;{{i.date}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

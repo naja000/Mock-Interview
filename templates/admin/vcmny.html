@@ -1,0 +1,36 @@
+{% extends 'admin/indexadmin.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">PLACE</th>
+              <th scope="col">WEBSITE</th>
+
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">&nbsp;</th>
+
+    </tr>
+        {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i.name}}</td>
+
+      <td>&nbsp;{{i.place}}</td>
+        <td>{{ i.website }}</td>
+      <td>&nbsp;{{i.phone}}</td>
+      <td>&nbsp;{{i.email}}</td>
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td> {% if i.LOGIN.type == 'pending' %}<a href="{% url 'accept' id=i.LOGIN.id %}" >ACCEPT</a>
+     <br>
+        <a href="{% url 'reject' id=i.LOGIN.id %}" >REJECT</a>{% elif i.LOGIN.type == 'company' %} Accepted.. {% else %} Rejected..{% endif %}
+</td>
+    </tr>
+        {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

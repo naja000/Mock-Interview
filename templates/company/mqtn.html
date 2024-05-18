@@ -1,0 +1,42 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addcpqstn#abt">
+  <table width="200" border="1" id="customers" class="table">
+     <tr>
+      <th width="178" scope="row">VACCANCY</th>
+      <td width="203"><label>
+        <select name="slt" required>
+{% for i in v %}
+            <option value="{{ i.id }}" {% if i.id == vac %}selected{% endif %}>{{ i.job }}</option>
+            {% endfor %}
+        </select>
+      </label></td><TD> <input type="submit" name="Submit" value="SEARCH" /></TD>
+    </tr>
+    <tr>
+      <th scope="col">QUSETION</th>
+
+      <th scope="col">ANSWER </th>
+
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.question}}</td>
+      <td>&nbsp;{{i.ans}}</td>
+
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td><a href="{% url 'dltcpqst' id=i.id %}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+    </tr>
+        {% endfor %}
+    <tr>
+      <td colspan="9"><div align="center">
+        <label>
+        <input type="submit" name="Submit" value="ADD NEW" />
+        </label>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

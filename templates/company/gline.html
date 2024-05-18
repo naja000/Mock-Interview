@@ -1,0 +1,23 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'gline2' %}">
+  <table width="549" border="1" id="customers" class="table">
+      <tr>
+          <th>GUIDELINES
+          <input type="text" name="t1"></th>
+      </tr>
+    <tr>
+      <th width="539" scope="row"><p>DETAILS          </p>
+        <label>
+        <textarea name="t2" style="width:400PX;height:80px;" required></textarea>
+        <br />
+        <br />
+        <input type="submit" name="Submit" value="SEND" class="btn btn-info" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

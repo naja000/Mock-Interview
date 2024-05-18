@@ -1,0 +1,34 @@
+{% extends 'company/indexcmp.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" id="customers" class="table">
+    <tr>
+      <th scope="col">NAME</th>
+              <th scope="col">JOB DETAILS</th>
+
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">&nbsp;</th>
+
+    </tr>
+        {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i.USER.fname}} {{i.USER.lname}}</td>
+
+      <td>&nbsp;{{i.VACCANCY.job}}</td>
+      <td>&nbsp;{{i.USER.phone}}</td>
+      <td>&nbsp;{{i.USER.email}}</td>
+      <!--<td><a href="#">EDIT</a></td>-->
+      <td> {% if i.status == 'pending' %}<a href="{% url 'acceptreq' id=i.id %}" >ACCEPT</a>
+     <br>
+        <a href="{% url 'rejectreq' id=i.id %}" >REJECT</a>{% elif i.status == 'accepted' %} Accepted.. {% else %} Rejected..{% endif %}
+</td>
+    </tr>
+        {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
